@@ -1,0 +1,18 @@
+'Paste this code into the VBA Worksheet (ger. DieseArbeitsmappe) Element in the VBA Editor to track pageviews, opens, saves and sheet-Adds
+Private Sub Workbook_AfterSave(ByVal Success As Boolean)
+    Call workbookTag("save")
+End Sub
+
+Private Sub Workbook_NewSheet(ByVal Sh As Object)
+    Call workbookTag("newpage")
+End Sub
+
+Private Sub Workbook_Open()
+    Call workbookTag("open")
+End Sub
+
+Private Sub Workbook_SheetActivate(ByVal Sh As Object)
+    Call workbookTag("pageview")
+End Sub
+
+
